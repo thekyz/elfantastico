@@ -1,10 +1,12 @@
 Elfantastico::Application.routes.draw do
   root :to => "pages#contact"
-  match '/electronics', :to => 'pages#electronics'
+  #match '/electronics', :to => 'pages#electronics'
   match '/beleza', :to => 'pages#beleza'
   match '/sport', :to => 'pages#sport'
   match '/house', :to => 'pages#house'
   match '/kitchen', :to => 'pages#kitchen'
+
+  resources :category
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

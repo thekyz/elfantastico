@@ -7,24 +7,9 @@ class PagesController < ApplicationController
     @title = "Contact"
   end
 
-  def electronics
-    @title = "Electronics"
-  end
-
-  def beleza
-    @title = "Beleza"
-  end
-
-  def house
-    @title = "House"
-  end
-
-  def sport
-    @title = "Sport"
-  end
-
-  def kitchen
-    @title = "Kitchen"
+  def category
+    @category = params[:id]
+    @title = @category.capitalize
   end
 end
 
