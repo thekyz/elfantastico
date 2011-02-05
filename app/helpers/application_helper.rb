@@ -17,7 +17,7 @@ module ApplicationHelper
         end
       end
     else
-      return []
+      return ["Electronics", "House"]
     end
 
     # Return the set as array
