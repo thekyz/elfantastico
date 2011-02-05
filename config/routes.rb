@@ -1,15 +1,10 @@
 Elfantastico::Application.routes.draw do
-  get "pages/contact"
-
-  get "pages/electronics"
-
-  get "pages/beleza"
-
-  get "pages/sport"
-
-  get "pages/house"
-
-  get "pages/kitchen"
+  root :to => "pages#contact"
+  match '/electronics', :to => 'pages#electronics'
+  match '/beleza', :to => 'pages#beleza'
+  match '/sport', :to => 'pages#sport'
+  match '/house', :to => 'pages#house'
+  match '/kitchen', :to => 'pages#kitchen'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -60,7 +55,6 @@ Elfantastico::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 
