@@ -1,5 +1,35 @@
 <h1><%= link_to @title, category_path(@category) %></h1>
-<p>
-  <%= get_items %>
-</p>
+
+<% items.each do |product| %>
+<table style="background-color: #ffffff; height: 360px;" border="0" width="800">
+  <tbody>
+    <tr>
+      <td style="width: 300px; height: 300px;" rowspan="5" align="center" valign="middle">
+        <%= image_tag(product.imageuri, :alt => product.name, :width => "300", :height => "225", :class => "product_image") %>
+      </td>
+      <td colspan="2"><strong><span style="background-color: #ffffff; color: #000000; font-size: large;"><%= product.name %></span></strong></td>
+    </tr>
+    <tr valign="middle">
+      <td style="width: 10px;" valign="middle"><span style="background-color: #ffffff; color: #000000;">Reference</span></td>
+      <td style="width: 300px;" valign="middle"><span style="background-color: #ffffff; color: #000000;"><%= product.reference %></span></td>
+    </tr>
+    <tr>
+      <td><span style="background-color: #ffffff; color: #000000;">Brand</span></td>
+      <td><span style="background-color: #ffffff; color: #000000;"><%= product.brand %></span></td>
+    </tr>
+    <tr>
+      <td><span style="background-color: #ffffff; color: #000000;">Price</span></td>
+      <td><span style="background-color: #ffffff; color: #000000;">USD <%= product.unitprice %></span></td>
+    </tr>
+    <tr>
+      <td><span style="background-color: #ffffff; color: #000000;">&nbsp;</span></td>
+      <td><span style="background-color: #ffffff; color: #000000;">&nbsp;</span></td>
+    </tr>
+    <tr>
+      <td colspan="3"><span style="background-color: #ffffff; color: #000000;"><%= product.description %></span></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<% end %>
 
