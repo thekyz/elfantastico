@@ -10,7 +10,9 @@
   <div id="menu">
     <ul>
       <li><%= link_to "Contact", root_path %></li>
-      <li><%= link_to "Electronics", category_path('electronics') %></li>
+      <% categories.each do |cat| %>
+      <li><%= link_to cat, category_path(cat) %></li>
+      <% end %>
     </ul>
   </div>
 </header>
