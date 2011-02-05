@@ -7,7 +7,7 @@ module ApplicationHelper
   def categories
     categorySet = Set.new []
     logger.info "----------- Getting categories"
-    book = Spreadsheet.open('data.xls')
+    book = nil #Spreadsheet.open('data.xls')
     # Iterate through the category column
     unless book.nil?
       book.worksheet(0).each 1 do |row|
