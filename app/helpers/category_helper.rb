@@ -1,21 +1,16 @@
 module CategoryHelper
-
   class Product
     attr_accessor :id, :name, :reference, :category, :unitprice, :imageuri, :brand, :description
 
     def initialize(entry)
-      @id = entry["id"][1]
-      @name = entry["productname"][0]
-      @reference = entry["reference"][0]
-      @category = entry["category"][1]
-      @unitprice = entry["unitprice"][0]
-      if entry["imageurl"][0] == {}
-        @imageuri = "no_image.gif"
-      else
-        @imageuri = entry["imageurl"][0]
-      end
-      @brand = entry["brand"][0]
-      @description = entry["productdescription"][0]
+      @id           = (entry["id"][1]                 == {} && "-")             || entry["id"][0]
+      @name         = (entry["productname"][0]        == {} && "-")             || entry["productname"][0]
+      @reference    = (entry["reference"][0]          == {} && "-")             || entry["reference"][0]
+      @category     = (entry["category"][1]           == {} && "-")             || entry["category"][0]
+      @unitprice    = (entry["unitprice"][0]          == {} && "-")             || entry["unitprice"][0]
+      @imageuri     = (entry["imageurl"][0]           == {} && "no_image.gif")  || entry["imageurl"][0]
+      @brand        = (entry["brand"][0]              == {} && "-")             || entry["brand"][0]
+      @description  = (entry["productdescription"][0] == {} && "-")             || entry["productdescription"][0]
     end
 
     def to_s

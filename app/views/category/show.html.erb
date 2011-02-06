@@ -5,7 +5,9 @@
   <tbody>
     <tr>
       <td style="width: 300px; height: 300px;" rowspan="5" align="center" valign="middle">
-        <%= image_tag(product.imageuri, :alt => product.name, :width => "300", :height => "225", :class => "product_image") %>
+        <div id="scale-img" style ="width: 330px">
+          <%= image_tag(product.imageuri, :alt => product.name, :class => "product_image") %>
+        </div>
       </td>
       <td colspan="2"><strong><span style="background-color: #ffffff; color: #000000; font-size: large;"><%= product.name %></span></strong></td>
     </tr>
@@ -26,7 +28,7 @@
       <td><span style="background-color: #ffffff; color: #000000;">&nbsp;</span></td>
     </tr>
     <tr>
-      <td colspan="3"><span style="background-color: #ffffff; color: #000000;"><%= product.description %></span></td>
+      <td colspan="3"><span style="background-color: #ffffff; color: #000000;"><%= simple_format(product.description) %></span></td>
     </tr>
   </tbody>
 </table>
