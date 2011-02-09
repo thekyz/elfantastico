@@ -73,6 +73,14 @@ a:hover {
 	color: #FFFFFF;
 }
 
+a.maillink {
+	color: #003300;
+}
+
+a.maillink:hover {
+	color: #990000;
+}
+
 img {
     vertical-align: middle;
 	border: none;

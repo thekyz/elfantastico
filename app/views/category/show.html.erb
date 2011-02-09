@@ -30,7 +30,9 @@
     <tr>
       <td colspan="3">
         <%= simple_format(product.description) %>
-        <span style="background-color: #ffffff; color: #FF0000;"><b>Interested?? Email us tricky57+vente@gmail.com</b></span>
+        <span style="background-color: #ffffff; color: #FF0000;">
+          <b>Interested?? Email us <%= link_to "tricky57+vente@gmail.com", "mailto:tricky57+vente@gmail.com?subject=" + product.name, {:class => "maillink"} %></b>
+        </span>
       </td>
     </tr>
   </tbody>
